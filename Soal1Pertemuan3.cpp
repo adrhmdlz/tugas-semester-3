@@ -1,21 +1,24 @@
 #include<iostream>
+#include<cstdlib>
 
 using namespace std;
 
-float hitungLuasPersegi(int panjang, int lebar);
-
-int main() {
-  int p, l;
-
-  cout << "Masukan nilai panjang: ";
-  cin >> p;
-
-  cout << "Masukan nilai lebar: ";
-  cin >> l;
-
-  cout << "Luas persegi adalah: " << hitungLuasPersegi(p, l) << endl;
-}
-
-float hitungLuasPersegi(int panjang, int lebar) {
+// Fungsi untuk menghitung luas persegi
+float luasPersegiPanjang(int panjang, int lebar) {
   return panjang * lebar;
+};
+
+int main(int argc, char* argv[]) {
+  if (argc != 3) {
+    cout << "Input tidak valid" << endl;
+    return 1;
+  }
+
+  // Input 1 = panjang, input 2 = lebar
+  int panjang = atoi(argv[1]);
+  int lebar = atoi(argv[2]);
+
+  cout << "Luas Persegi Panjang adalah: " << luasPersegiPanjang(panjang, lebar) << endl;
+
+  return 0;
 }
